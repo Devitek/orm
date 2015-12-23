@@ -26,16 +26,16 @@ return [
             'meta'       => env('DOCTRINE_METADATA', 'annotations'),
             'connection' => env('DB_CONNECTION', 'mysql'),
             'namespaces' => [
-                'App'
+                'App',
             ],
             'paths'      => [
-                base_path('app')
+                base_path('app'),
             ],
             'repository' => Doctrine\ORM\EntityRepository::class,
             'proxies'    => [
                 'namespace'     => false,
                 'path'          => storage_path('proxies'),
-                'auto_generate' => env('DOCTRINE_PROXY_AUTOGENERATE', false)
+                'auto_generate' => env('DOCTRINE_PROXY_AUTOGENERATE', false),
             ],
             /*
             |--------------------------------------------------------------------------
@@ -48,10 +48,10 @@ return [
             */
             'events'     => [
                 'listeners'   => [],
-                'subscribers' => []
+                'subscribers' => [],
             ],
-            'filters'    => []
-        ]
+            'filters'    => [],
+        ],
     ],
     /*
     |--------------------------------------------------------------------------
@@ -82,15 +82,8 @@ return [
     |--------------------------------------------------------------------------
     */
     'custom_types'              => [
-        'json' => LaravelDoctrine\ORM\Types\Json::class
-    ],
-    /*
-    |--------------------------------------------------------------------------
-    | Doctrine overrided types
-    |--------------------------------------------------------------------------
-    */
-    'overrided_types'              => [
-        'datetime' => \LaravelDoctrine\ORM\Types\Carbon::class
+        'json'     => LaravelDoctrine\ORM\Types\Json::class,
+        'datetime' => LaravelDoctrine\ORM\Types\Carbon::class,
     ],
     /*
     |--------------------------------------------------------------------------
@@ -135,9 +128,9 @@ return [
     |
     */
     'cache'                     => [
-        'default'                => env('DOCTRINE_CACHE', 'array'),
-        'namespace'              => null,
-        'second_level'           => false,
+        'default'      => env('DOCTRINE_CACHE', 'array'),
+        'namespace'    => null,
+        'second_level' => false,
     ],
     /*
     |--------------------------------------------------------------------------
@@ -150,6 +143,6 @@ return [
     |
     */
     'gedmo'                     => [
-        'all_mappings' => false
-    ]
+        'all_mappings' => false,
+    ],
 ];

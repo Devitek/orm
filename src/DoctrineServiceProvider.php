@@ -207,22 +207,6 @@ class DoctrineServiceProvider extends ServiceProvider
     }
 
     /**
-     * @throws \Doctrine\DBAL\DBALException
-     */
-    protected function registerOverridedTypes()
-    {
-        $overridedTypes = $this->app->make('config')->get('doctrine.overrided_types', []);
-
-        foreach ($overridedTypes as $originalType => $newType) {
-            if (! Type::hasType($originalType)) {
-                throw new TypeNotFound("Type {$originalType} not found");
-            }
-
-            Type::overrideType($originalType, $newType);
-        }
-    }
-
-    /**
      * Extend the auth manager
      */
     protected function extendAuthManager()
